@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Eter — Security & Privacy</title>
+  <meta name="description" content="How Eter keeps your data private and secure: EU hosting, single-tenant isolation, OAuth domain allowlists, transcripts off by default, backups and restore tested, GDPR DPA with TOMs." />
+  <style>
+    :root{
+      --bg:#ffffff;
+      --text:#0f0f0f;
+      --muted:#555;
+      --line:#e6e6e6;
+      --accent:#1B9C85; /* emerald */
+      --chip:#f5fdfb;
+    }
+    html,body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
+    main{max-width:860px;margin:0 auto;padding:28px 18px 64px}
+    header {
+  display: flex;
+  flex-direction: column; /* stack children vertically */
+  align-items: flex-start; /* left align */
+  margin-bottom: 12px;
+}
+    h1.logo{font-family:"SUSE Mono",monospace;font-weight:200;color:var(--accent);font-size:2.8rem;letter-spacing:.5px;margin:0}
+    nav a{font-size:.95rem;color:var(--accent);text-decoration:none}
+    h1,h2,h3{line-height:1.25;margin:0 0 10px}
+    h1{font-size:1.9rem;margin-top:8px}
+    h2{font-size:1.25rem;margin-top:26px}
+    p,ul{margin:12px 0}
+    hr{border:0;border-top:1px solid var(--line);margin:20px 0}
+    .lede{color:#222;font-size:1.05rem}
+    .grid{display:grid;gap:14px}
+    @media(min-width:760px){.grid.cols-2{grid-template-columns:1fr 1fr}.grid.cols-3{grid-template-columns:repeat(3,1fr)}}
+    .card{border:1px solid var(--line);border-radius:12px;padding:14px 14px 12px;background:#fff}
+    .card.soft{background:#fafafa}
+    .chip{display:inline-flex;align-items:center;gap:8px;background:var(--chip);border:1px solid #daf3ee;color:#0b3e36;border-radius:999px;padding:6px 10px;font-weight:600;font-size:.9rem}
+    .stack{display:flex;flex-direction:column;gap:6px}
+    .row{display:flex;align-items:flex-start;gap:10px}
+    h1.logo{margin-bottom:38px}
+    .icon{width:22px;height:22px;flex:0 0 22px;color:var(--accent)}
+    .muted{color:var(--muted)}
+    .cta{display:inline-block;text-decoration:none;padding:10px 16px;border:1px solid #000;border-radius:8px;margin-top:8px;font-weight:600}
+    a.cta, a.cta:visited{color:var(--accent)}
+    ul.tight{padding-left:18px;margin:8px 0}
+    ul.tight li{margin:6px 0}
+    code.k{background:#f7f7f7;border:1px solid var(--line);padding:2px 6px;border-radius:6px}
+    footer{margin-top:40px;font-size:.95rem;color:#666}
+    .kbd{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-size:.9em}
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=SUSE+Mono:wght@200;300;400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<main>
+  <header>
+    <a href="/" aria-label="Back to home" style="text-decoration:none"><h1 class="logo">Eter chat</h1></a>
+    <nav><a href="/"><- Home</a></nav>
+  </header>
+
+  <section aria-labelledby="title">
+    <h1 id="title">Security and privacy</h1>
+    <p class="lede">Your data stays private. Your assistant answers only from your sources with citations. Hosting is EU-only by default or inside your own infrastructure.</p>
+    <div class="grid cols-3" style="margin-top:12px">
+      <div class="chip">
+        <!-- shield-check -->
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2l7 3v6c0 5-3.4 9.4-7 11c-3.6-1.6-7-6-7-11V5l7-3zm-1 13l6-6l-1.4-1.4L11 12.2L8.4 9.6L7 11l4 4z"/></svg>
+        Single-tenant isolation
+      </div>
+      <div class="chip">
+        <!-- lock -->
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 1a5 5 0 0 1 5 5v3h1a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-9a2 2 0 0 1 2-2h1V6a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3v3h6V6a3 3 0 0 0-3-3Z"/></svg>
+        OAuth with domain allowlists
+      </div>
+      <div class="chip">
+        <!-- eu stars -->
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 2 1 2h2l-1.6 1.2l.6 2l-2-1.2l-2 1.2l.6-2L9 4h2zM4 10l1 2h2l-1.6 1.2l.6 2l-2-1.2l-2 1.2l.6-2L1 12h2zm16 0l1 2h2l-1.6 1.2l.6 2l-2-1.2l-2 1.2l.6-2L17 12h2zM12 18l1 2h2l-1.6 1.2l.6 2l-2-1.2l-2 1.2l.6-2L9 20h2z"/></svg>
+        EU hosting by default
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="overview">
+    <h2 id="overview">Key guarantees</h2>
+    <div class="grid cols-2">
+      <div class="card stack">
+        <div class="row">
+          <!-- database/tenant -->
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3c4.418 0 8 1.343 8 3s-3.582 3-8 3s-8-1.343-8-3s3.582-3 8-3m-8 6v3c0 1.657 3.582 3 8 3s8-1.343 8-3V9c-1.649 1.133-4.826 2-8 2s-6.351-.867-8-2m0 6v3c0 1.657 3.582 3 8 3s8-1.343 8-3v-3c-1.649 1.133-4.826 2-8 2s-6.351-.867-8-2"/></svg>
+          <div>
+            <strong>Single-tenant per customer</strong>
+            <p class="muted">Each customer gets an isolated stack (API, storage, vector DB). No shared data plane.</p>
+          </div>
+        </div>
+        <div class="row">
+          <!-- citation -->
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 4h13v2H7zM4 9h16v2H4zm0 5h10v2H4zm0 5h7v2H4z"/></svg>
+          <div>
+            <strong>Citations from your sources</strong>
+            <p class="muted">Answers are grounded in your documents with expandable citations. If content isn’t found, the assistant refuses.</p>
+          </div>
+        </div>
+        <div class="row">
+          <!-- eye-off -->
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M2.39 1.73L1.11 3l3.05 3.05A12.1 12.1 0 0 0 1 12s3.73 7 11 7c2.04 0 3.8-.5 5.28-1.23L21 21.49L22.27 20.2zm8.21 8.21l3.46 3.46A3 3 0 0 1 10.6 9.94M12 5c6 0 9.73 7 9.73 7a16.9 16.9 0 0 1-3.3 4.17l-1.42-1.42A14.1 14.1 0 0 0 20 12s-3.73-7-8-7a7 7 0 0 0-5.7 2.94L4.83 6.47A8.98 8.98 0 0 1 12 5"/></svg>
+          <div>
+            <strong>Transcripts off by default</strong>
+            <p class="muted">You control retention. Keep nothing, or set a short window (e.g., 7 days) per tenant.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card stack">
+        <div class="row">
+          <!-- lock-key -->
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 10V7a5 5 0 1 1 10 0v3h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2zm2 0h6V7a3 3 0 1 0-6 0z"/></svg>
+          <div>
+            <strong>OAuth with domain allowlists</strong>
+            <p class="muted">Google or Microsoft sign-in. Only emails from your company domain are allowed.</p>
+          </div>
+        </div>
+        <div class="row">
+          <!-- cloud shield -->
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19 18a3 3 0 0 0 3-3a3 3 0 0 0-2.7-3a5 5 0 0 0-9.6-2A4 4 0 0 0 4 14a4 4 0 0 0 4 4zM13 22c-2-1-4-2.7-4-5.5V14l4-2l4 2v2.5C17 19.3 15 21 13 22"/></svg>
+          <div>
+            <strong>EU hosting or your own infrastructure</strong>
+            <p class="muted">Default is EU single-tenant hosting. Self-host inside your cloud or datacenter if preferred.</p>
+          </div>
+        </div>
+        <div class="row">
+          <!-- recycle/backup -->
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 6 2.5 2.5L12 11V8H6V6zm0 12l-2.5-2.5L12 13v3h6v2zM4 8h2v8H4zm14 0h2v8h-2z"/></svg>
+          <div>
+            <strong>Backups and restore tested</strong>
+            <p class="muted">Daily object backups and periodic vector snapshots. We verify restoration for each tenant.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="hosting">
+    <h2 id="hosting">Hosting models</h2>
+    <div class="grid cols-2">
+      <div class="card soft">
+        <div class="row">
+          <!-- server -->
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm0 9a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zM7 8h2v2H7zm0 9h2v2H7z"/></svg>
+          <div>
+            <strong>Managed EU single-tenant</strong>
+            <p class="muted">We deploy a dedicated stack in the EU. No data is shared between customers.</p>
+            <ul class="tight">
+              <li>TLS 1.3 in transit; encrypted storage for objects</li>
+              <li>Restricted admin access; key-based SSH</li>
+              <li>Optional transcript retention window</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="card soft">
+        <div class="row">
+          <!-- building/self host -->
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 22V2h6v20zm10 0V8h6v14zM6 4v16h2V4zm10 6v10h2V10z"/></svg>
+          <div>
+            <strong>Self-host in your environment</strong>
+            <p class="muted">Run the stack inside your VPC or on-prem. We provide deployment guides and support.</p>
+            <ul class="tight">
+              <li>Bring your identity provider</li>
+              <li>Use your own storage and keys</li>
+              <li>Keep all data on your network</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="dataflow">
+    <h2 id="dataflow">How your data is handled</h2>
+    <div class="grid cols-2">
+      <div class="card">
+        <div class="row">
+          <!-- upload -->
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5 20h14v-2H5m7-14l-5 5h3v4h4v-4h3z"/></svg>
+          <div>
+            <strong>Ingestion</strong>
+            <p class="muted">You upload policy PDFs, docs, or exports to your tenant. Files remain inside that tenant.</p>
+          </div>
+        </div>
+        <div class="row">
+          <!-- brain/cog -->
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M10 2a2 2 0 0 1 2 2v1.09a7 7 0 0 1 3.91 1.62l.77-.45a2 2 0 1 1 2 3.46l-.77.45c.2.65.29 1.34.29 2.03s-.1 1.38-.29 2.03l.77.45a2 2 0 1 1-2 3.46l-.77-.45A7 7 0 0 1 12 18.91V20a2 2 0 1 1-4 0v-1.09a7 7 0 0 1-3.91-1.62l-.77.45a2 2 0 1 1-2-3.46l.77-.45A7 7 0 0 1 2.91 12c0-.69.1-1.38.29-2.03l-.77-.45a2 2 0 1 1 2-3.46l.77.45A7 7 0 0 1 8 5.09V4a2 2 0 0 1 2-2Z"/></svg>
+          <div>
+            <strong>Question answering</strong>
+            <p class="muted">Queries are answered against your corpus with reranking and strict citation. If the answer isn’t present, the assistant says so.</p>
+          </div>
+        </div>
+        <div class="row">
+          <!-- file-lock -->
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h5v-2H6V6h7v3h3v1.1a5 5 0 0 1 2 0V8zM14 16a3 3 0 0 1 3-3a3 3 0 0 1 3 3v1h1v4H10v-4h1z"/></svg>
+          <div>
+            <strong>Retention and logs</strong>
+            <p class="muted">Transcripts are disabled by default. Minimal logs for health and usage; no PII in logs. You choose retention policies.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Controls in place</h3>
+        <ul class="tight">
+          <li>Encryption in transit with TLS 1.3</li>
+          <li>Encrypted object storage for files</li>
+          <li>Role-based access; admin/member separation</li>
+          <li>Daily backups and periodic restore tests</li>
+          <li>No data used to train public models</li>
+          <li>Per-tenant secrets; no shared credentials</li>
+        </ul>
+        <hr />
+        <h3>Compliance</h3>
+        <p class="muted">We provide a GDPR Data Processing Agreement with Technical and Organisational Measures (TOMs), an Incident Response plan, and a Logging & Retention policy. Sub-processors, if any, are listed in the security pack.</p>
+        <a class="cta" href="mailto:mattis@eter.chat?subject=Eter%20Security%20Pack%20Request">Request security pack</a>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="faq">
+    <h2 id="faq">Common questions</h2>
+    <div class="grid">
+      <div class="card">
+        <strong>Does data leave the tenant?</strong>
+        <p class="muted">No. Documents and answers stay within your tenant. External calls are limited to identity (OAuth) and optional email notifications.</p>
+      </div>
+      <div class="card">
+        <strong>Can we self-host entirely?</strong>
+        <p class="muted">Yes. We support deployments inside your VPC or on-prem with your storage, identity, and keys.</p>
+      </div>
+      <div class="card">
+        <strong>What is logged?</strong>
+        <p class="muted">Service health and usage counters (timestamps, counts). We avoid storing query or answer text unless you enable transcripts with a retention window.</p>
+      </div>
+      <div class="card">
+        <strong>How do backups work?</strong>
+        <p class="muted">Objects are backed up daily; vector indexes are snapshotted periodically. We verify restoration for each tenant.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <hr />
+    <p>Questions? Email <a href="mailto:mattis@eter.chat">mattis@eter.chat</a>. Want to see it in action? <a href="https://calendly.com/mattis-erngren/private-ai">Book a demo</a>.</p>
+  </footer>
+</main>
+</body>
+</html>
