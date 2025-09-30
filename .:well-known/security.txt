@@ -1,0 +1,3 @@
+Contact: mailto:mattis@eter.chat
+Preferred-Languages: en, sv
+Policy: https://www.eter.chat/security

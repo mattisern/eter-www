@@ -1,305 +1,313 @@
 :root {
-    /* Color Variables (from new list, preferred names) */
-    --color-bg: #fff; /* Main background */
-    --color-text: #0f0f0f; /* Main dark text */
-    --color-muted: #555; /* Muted text (cap, some links) */
-    --color-line: #e6e6e6; /* Light line/border (HR, footer border) */
-    --color-accent: #1B9C85; /* Primary accent color (links, logo, nav) */
-    --color-screenshot-bg: #fafafa; /* Specific background for screenshot area */
-    --color-cta-border: #000; /* CTA border color */
-    --color-text-subhead: #ffffff; /* Subhead text color */
-    
-    /* Spacing & Sizing Variables (from new list, more granular) */
-    --spacing-xs: 4px;
-    --spacing-sm: 8px;
-    --spacing-md: 16px;
-    --spacing-lg: 32px;
-    --spacing-xl: 40px;
-    
-    --max-width: 760px; /* Kept your original 760px main width */
-    --border-radius-base: 8px;
-    --border-radius-small: 6px;
-  }
+  /* Color Variables */
+  --color-bg: #fff; /* Main background */
+  --color-text: #0f0f0f; /* Main dark text */
+  --color-muted: #555; /* Muted text (cap, some links) */
+  --color-line: #e6e6e6; /* Light line/border (HR, footer border) */
+  --color-accent: #1B9C85; /* Primary accent color (links, logo, nav) */
+  --color-screenshot-bg: #fafafa; /* Specific background for soft cards/chip tint */
+  --color-cta-border: #000; /* CTA border color */
+  --color-text-subhead: #ffffff; /* Subhead text color (used in background image contexts) */
   
-  /* * Base and Layout 
-   */
-  html, body {
-    margin: 0;
-    /* Use the new variable names */
-    background: var(--color-bg);
-    color: var(--color-text);
-    /* Use the new, more robust font-family stack */
-    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.65; /* Slightly better for readability */
-    font-size: 100%;
-  }
+  /* Spacing & Sizing Variables */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 32px;
+  --spacing-xl: 40px;
   
-  main { 
-    max-width: var(--max-width); 
-    margin: 0 auto; 
-    /* Using consistent spacing variables for padding */
-    padding: var(--spacing-lg) var(--spacing-md) 56px; 
-  }
-  
-  /*
-   * Typography (Combines original needs with new styles)
-   */
-  h1, h2 { 
-    line-height: 1.25; /* Kept closer to your original for tighter feel */
-    margin: 0 0 12px; /* A fixed medium value for margin below headings */
-    font-weight: 600; 
-  }
-  
-  h1 { 
-    font-size: 1.75rem; 
-    margin-top: 3rem; 
-  }
-  
-  h2 { 
-    font-size: 1.25rem; 
-    margin-top: 28px; /* Kept 28px as it's an intentional vertical rhythm break */
-  }
-  
-  p {
-    margin: 12px 0; /* Kept your original paragraph spacing */
-  }
-  
-  ul {
-    margin: 12px 0; /* Kept your original list spacing */
-    padding-left: 20px;
-  }
-  
-  li {
-    margin-bottom: var(--spacing-xs); /* Added from the new list */
-  }
-  
-  /*
-   * Links
-   */
-  a,
-  .cta a, 
-  .cta a:active, 
-  .cta a:link, 
-  .cta a:visited {
-    color: var(--color-accent);
-    text-decoration: none;
-    font-weight: 400; /* Kept your original lighter link weight */
-  }
-  
-  /*
-   * Specific Components
-   */
-  
-  /* Logo (Styles from the new list are used here) */
-  h1.logo {
-    font-family: "SUSE Mono", monospace; /* Changed sans-serif to monospace */
-    font-weight: 300; 
-    color: var(--color-accent); 
-    font-size: 3.2rem; /* Kept your original size */
-    margin: 0;
-  }
-  
-  p.subhead {
-    font-family: 'Lora', serif;
-    font-weight: 500;
-    font-style: italic;
-    color: var(--color-text-subhead);
-    font-size: 1.2rem;
-    margin-top: var(--spacing-sm);
-  }
-  
-  nav a {
-    margin-right: var(--spacing-md);
-    font-family: "SUSE Mono", monospace;
-    color: var(--color-accent);
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 0.2rem;
-    font-size: 0.8rem;
-  }
-
-  nav a.nav-active {
-    color: var(--color-text);
-  }
-  
-  .cta {
-    display: inline-block; 
-    text-decoration: none; 
-    padding: 10px 16px; 
-    border: 1px solid var(--color-cta-border);
-    border-radius: var(--border-radius-base); 
-    margin-top: var(--spacing-sm); 
-    font-weight: 600; 
-  }
-  
-  .note { 
-    color: var(--color-muted); /* Used the more appropriate 'muted' variable */
-    font-size: 0.95rem; 
-  }
-  
-  .screenshot-wrap {
-    margin: 18px 0; 
-    padding: 12px; 
-    border: 1px solid var(--color-line); 
-    border-radius: var(--border-radius-base);
-    background: var(--color-screenshot-bg);
-  }
-  
-  .screenshot-wrap img { 
-    width: 100%; 
-    height: auto; 
-    display: block; 
-    border-radius: var(--border-radius-small); 
-  }
-  
-  .cap { 
-    font-size: 0.9rem; 
-    color: var(--color-muted); /* Used the 'muted' variable */
-    margin-top: var(--spacing-sm); 
-  }
-  
-  /* * Separator and Footer 
-   */
-  
-  /* The new list suggests using border-top on footer instead of a standalone <hr> */
-  hr { 
-    border: 0; 
-    border-top: 1px solid var(--color-line); 
-    margin: var(--spacing-large) 0; 
-  }
-  
-  footer { 
-    margin-top: var(--spacing-xl); /* Increased spacing for separation */
-    font-size: 0.9rem; 
-    color: var(--color-muted); /* Used the 'muted' variable */
-  }
-
-  /* --- Grid and Layout Utilities --- */
-.grid {
-  display: grid;
-  gap: var(--spacing-md); /* Use the defined variable for spacing */
-  margin-bottom: var(--spacing-lg);
+  --max-width: 760px; /* Max content width */
+  --border-radius-base: 8px;
+  --border-radius-small: 6px;
 }
 
-.cols-2 {
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-}
-
-.cols-3 {
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-}
-
-/* --- Enhanced Component Styles for Security Page --- */
-
-/* Give cards a better aesthetic, leveraging shadows/borders */
-.card {
-  /* Using a softer border color, if it wasn't already in your line variable */
-  border: 1px solid var(--color-line); 
-  border-radius: var(--border-radius-base);
-  padding: var(--spacing-md);
-  /* Optional: Subtle box-shadow for depth, often used in modern UIs */
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  transition: box-shadow 0.2s ease;
-}
-
-.card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Lift on hover */
-}
-
-/* Specific style for the "soft" cards in the Hosting Models section */
-.card.soft {
-  background-color: var(--color-screenshot-bg); /* Use the light background color for a hint of tint */
-  border: none; /* Remove the border if using a background tint */
-  box-shadow: none;
-}
-
-/* Ensure the title inside the card is styled well */
-.card h3 {
-  font-size: 1.1rem;
-  margin-top: 0;
-  margin-bottom: var(--spacing-md);
-}
-
-/* For cards that hold stacked content (like the Key Guarantees section) */
-.stack {
-  display: flex;
-  flex-direction: column;
-}
-
-/* --- Icon and Alignment --- */
-.icon {
-  width: 20px; /* Standard icon size */
-  height: 20px;
-  /* Ensures the icon doesn't shrink in the row/chip */
-  flex-shrink: 0; 
-  /* Add a small gap between the icon and the text */
-  margin-right: var(--spacing-sm); 
-}
-
-/* Better spacing for the list rows inside the cards */
-.card .row {
-  /* Separator between rows */
-  border-bottom: 1px solid var(--color-line); 
-  padding-bottom: var(--spacing-md);
-  margin-bottom: var(--spacing-md);
-}
-
-.card .row:last-child {
-  border-bottom: none; /* Remove the line after the last item */
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
-/* Force strong tag content to be block-level for better spacing with the muted paragraph */
-.row strong {
-    display: block;
-    font-weight: 600;
-    margin-bottom: var(--spacing-xs); /* Tighter spacing to the description */
-    line-height: 1.2;
-}
-
-/* Tighter list style */
-ul.tight {
-  list-style-type: '— '; /* Use a dash for a modern, cleaner bullet point */
-  padding-left: var(--spacing-md);
-}
-
-/* Tighter margin for paragraphs within lists */
-.tight li {
-    margin-bottom: var(--spacing-xs);
-    padding-left: 0;
-}
-
-.chip {
-  display: flex;
-  align-items: center;
-  /* Adding a subtle style to the chips */
-  background: var(--color-screenshot-bg); /* Reuse the light background color */
-  padding: var(--spacing-sm) var(--spacing-md);
-  border-radius: var(--border-radius-small);
-  font-weight: 500;
+/* * Base and Layout 
+ */
+html, body {
+  margin: 0;
+  background: var(--color-bg);
   color: var(--color-text);
-  /* The chips should not wrap their content onto two lines */
-  white-space: nowrap; 
-  overflow: hidden;
-  text-overflow: ellipsis;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.65;
+  font-size: 100%;
 }
 
-/* Fixes the text alignment inside the .row component */
-.row > div {
-  /* Allows the text content to take up remaining space */
-  flex-grow: 1; 
+main { 
+  max-width: var(--max-width); 
+  margin: 0 auto; 
+  padding: var(--spacing-lg) var(--spacing-md) 56px; 
 }
 
-/* --- List Cleanup --- */
-.tight {
-  list-style: disc; /* Ensure a bullet is present */
+/*
+ * Typography
+ */
+h1, h2 { 
+  line-height: 1.25;
+  margin: 0 0 12px;
+  font-weight: 600; 
+}
+
+h1 { 
+  font-size: 1.75rem; 
+  margin-top: 3rem; 
+}
+
+h2 { 
+  font-size: 1.25rem; 
+  margin-top: 28px;
+}
+
+p {
+  margin: 12px 0;
+}
+
+ul {
+  margin: 12px 0;
   padding-left: 20px;
 }
 
-/* Also noticed this element which likely needs margin removal */
+li {
+  margin-bottom: var(--spacing-xs);
+}
+
 .lede {
   font-size: 1.15rem; /* Make the intro paragraph stand out */
   margin-bottom: var(--spacing-lg);
   line-height: 1.5;
+}
+
+.muted {
+  color: var(--color-muted);
+}
+
+.note { 
+  color: var(--color-muted);
+  font-size: 0.95rem; 
+}
+
+/*
+ * Links
+ */
+a,
+.cta a, 
+.cta a:active, 
+.cta a:link, 
+.cta a:visited {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 400;
+}
+
+/*
+ * Specific Components
+ */
+
+/* Logo */
+h1.logo {
+  font-family: "SUSE Mono", monospace;
+  font-weight: 300; 
+  color: var(--color-accent); 
+  font-size: 3.2rem;
+  margin: 0;
+}
+
+/* Header Nav */
+nav a {
+  margin-right: var(--spacing-md);
+  font-family: "SUSE Mono", monospace;
+  color: var(--color-accent);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-size: 0.8rem;
+}
+
+nav a.nav-active {
+  color: var(--color-text);
+}
+
+/* Call-to-Action Button */
+.cta {
+  display: inline-block; 
+  text-decoration: none; 
+  padding: 10px 16px; 
+  border: 1px solid var(--color-cta-border);
+  border-radius: var(--border-radius-base); 
+  margin-top: var(--spacing-sm); 
+  font-weight: 600; 
+}
+
+/* Screenshot/Image Wrapper */
+.screenshot-wrap {
+  margin: 18px 0; 
+  padding: 12px; 
+  border: 1px solid var(--color-line); 
+  border-radius: var(--border-radius-base);
+  background: var(--color-screenshot-bg);
+}
+
+.screenshot-wrap img { 
+  width: 100%; 
+  height: auto; 
+  display: block; 
+  border-radius: var(--border-radius-small); 
+}
+
+.cap { 
+  font-size: 0.9rem; 
+  color: var(--color-muted);
+  margin-top: var(--spacing-sm); 
+}
+
+/* * Separator and Footer 
+ */
+
+hr { 
+  border: 0; 
+  border-top: 1px solid var(--color-line); 
+  margin: var(--spacing-lg) 0; 
+}
+
+footer { 
+  margin-top: var(--spacing-xl);
+  font-size: 0.9rem; 
+  color: var(--color-muted);
+}
+
+/* --- Grid and Layout Utilities --- */
+.grid {
+display: grid;
+gap: var(--spacing-md);
+margin-bottom: var(--spacing-lg);
+}
+
+.cols-2 {
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.cols-3 {
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* NEW: Generic flex utility for layout rows (used in hero cards) */
+.row {
+display: flex; 
+gap: var(--spacing-sm); 
+align-items: flex-start;
+}
+
+/* NEW: Wrapper for multiple .chip elements (Trust & Protections) */
+.chips { 
+display:flex; 
+flex-wrap:wrap; 
+gap: var(--spacing-sm); 
+margin: var(--spacing-sm) 0 var(--spacing-md) 0; 
+} 
+
+/* --- Enhanced Component Styles (Cards, Rows, Icons, Chips) --- */
+
+/* Give cards a better aesthetic, leveraging shadows/borders */
+.card {
+border: 1px solid var(--color-line); 
+border-radius: var(--border-radius-base);
+padding: var(--spacing-md);
+box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+transition: box-shadow 0.2s ease;
+}
+
+.card:hover {
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Lift on hover */
+}
+
+/* Specific style for the "soft" cards (e.g., Hosting Models, How It Works) */
+.card.soft {
+background-color: var(--color-screenshot-bg); 
+border: none;
+box-shadow: none;
+}
+
+/* Ensure the title inside the card is styled well */
+.card h3 {
+font-size: 1.1rem;
+margin-top: 0;
+margin-bottom: var(--spacing-md);
+}
+
+/* For cards that hold stacked content (like the Key Guarantees section) */
+.stack {
+display: flex;
+flex-direction: column;
+}
+
+/* Specific styling for ROWS *inside* cards (like in the Security page features) */
+.card .row {
+border-bottom: 1px solid var(--color-line); 
+padding-bottom: var(--spacing-md);
+margin-bottom: var(--spacing-md);
+}
+
+.card .row:last-child {
+border-bottom: none;
+margin-bottom: 0;
+padding-bottom: 0;
+}
+
+/* Text alignment inside the generic .row or .card .row component */
+.row > div {
+flex-grow: 1; /* Allows the text content to take up remaining space */
+}
+
+/* Force strong tag content to be block-level for better spacing with the muted paragraph */
+.row strong {
+  display: block;
+  font-weight: 600;
+  margin-bottom: var(--spacing-xs);
+  line-height: 1.2;
+}
+
+/* --- Icon and Alignment --- */
+.icon {
+width: 20px;
+height: 20px;
+flex-shrink: 0; 
+margin-right: var(--spacing-sm);
+color: var(--color-accent); /* Use accent color for non-chip icons */
+}
+
+/* Icon style specific to the top .chip container for the Security Page */
+.chip .icon {
+  width: 30px; 
+  height: 30px;
+  margin-right: 0;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-accent);
+}
+
+/* General chip styling (used in the Pilot page and Security page) */
+.chip {
+display: flex;
+align-items: center;
+background: var(--color-screenshot-bg); 
+padding: var(--spacing-sm) var(--spacing-md);
+border-radius: var(--border-radius-small);
+font-weight: 500;
+color: var(--color-text);
+white-space: nowrap; 
+overflow: hidden;
+text-overflow: ellipsis;
+/* Styling for the Pilot page chips where icon and text are inline */
+gap: var(--spacing-xs); 
+}
+
+/* Tighter list style */
+ul.tight {
+list-style-type: '— '; 
+padding-left: var(--spacing-md);
+}
+
+/* Tighter margin for paragraphs within lists */
+.tight li {
+  margin-bottom: var(--spacing-xs);
+  padding-left: 0;
+  list-style-type: '— ';
 }
