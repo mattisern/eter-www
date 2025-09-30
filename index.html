@@ -5,49 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Eter — Private AI Assistants for Companies</title>
   <meta name="description" content="We build private, document-grounded AI assistants for companies. No data leakage, no generic hallucinations—just answers from your own policies, contracts, and research." />
-  <style>
-    body { font-family: 'Inter', sans-serif; line-height: 1.6; margin: 0; background-color: #fff; color: #0f0f0f;}
-    main { max-width: 760px; margin: 0 auto; padding: 24px 18px 56px; }
-    h1, h2 { line-height: 1.25; margin: 0 0 12px; }
-    h1 { font-size: 1.75rem; margin-top: 8px; }
-    h2 { font-size: 1.25rem; margin-top: 28px; }
-    p, ul { margin: 12px 0; }
-    hr { border: 0; border-top: 1px solid #ddd; margin: 24px 0; }
-    .cta {
-      display: inline-block; text-decoration: none; padding: 10px 16px; border: 1px solid #000;
-      border-radius: 8px; margin-top: 8px; font-weight: 600; 
-    }
-    .cta a, a:active, a:link, a:visited {
-      color: #1B9C85;
-      font-weight: 400;
-    }
-    .note { color: #444; font-size: 0.95rem; }
-    .screenshot-wrap {
-      margin: 18px 0; padding: 12px; border: 1px solid #ddd; border-radius: 8px;
-      background: #fafafa;
-    }
-    .screenshot-wrap img { width: 100%; height: auto; display: block; border-radius: 6px; }
-    .cap { font-size: 0.9rem; color: #555; margin-top: 8px; }
-    footer { margin-top: 40px; font-size: 0.9rem; color: #666; }
-
-
-    h1.logo {
-      font-family: "SUSE Mono", sans-serif;
-      font-weight: 200;
-    color: #1B9C85; /* emerald */
-    font-size: 3.2rem;
-    margin: 0;
-  }
-
-  p.subhead {
-    font-family: 'Lora', serif;
-    font-weight: 500;
-    font-style: italic;
-    color: #ffffff;
-    font-size: 1.2rem;
-    margin-top: 8px;
-  }
-  </style>
+  <link rel="stylesheet" href="styles.css"> 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -55,9 +13,15 @@
 </head>
 <body>
 <main>
-  <header>
-    <h1 class="logo">Eter chat</h1>
+
+  <header style="display:flex;flex-direction:column;align-items:flex-start;margin-bottom:12px">
+    <a href="/" style="text-decoration:none"><h1 class="logo">Eter chat</h1></a>
+    <nav style="margin-top:4px">
+      <a href="/security">security</a>
+      <a href="/waitlist">waitlist</a>
+    </nav>
   </header>
+  
 
   <section aria-labelledby="problem">
     <h2 id="problem">Private, secure, reliable AI. Built for your business.</h2>
