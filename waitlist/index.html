@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Eter — Waitlist</title>
+  <meta name="description" content="Join the waitlist for Eter’s December pilots: private HR answers with citations, EU single-tenant hosting." />
+  <style>
+    /*
+     * Color Variables
+     */
+    :root {
+      --bg: #fff;
+      --text: #0f0f0f;
+      --muted: #555;
+      --line: #e6e6e6;
+      --accent: #1B9C85; /* A vibrant teal/green */
+      --spacing-xs: 4px;
+      --spacing-sm: 8px;
+      --spacing-md: 16px;
+      --spacing-lg: 32px;
+      --max-width: 720px; /* Slightly reduced max-width for better balance */
+    }
+
+    /*
+     * Base and Layout
+     */
+    html, body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      /* Use a single font-family stack */
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.65; /* Slightly increased for better readability */
+      font-size: 100%; /* Base font size */
+    }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: var(--spacing-lg) var(--spacing-md); /* Consistent padding */
+    }
+
+    /*
+     * Typography
+     */
+    h1, h2 {
+      line-height: 1.3; /* Adjusted line-height */
+      margin: 0 0 var(--spacing-md);
+      font-weight: 600; /* Bolder headings for impact */
+    }
+
+    h1 {
+      font-size: 2.2rem; /* Increased size for main heading */
+      margin-top: 0;
+    }
+
+    h2 {
+      font-size: 1.4rem; /* Clearer section heading */
+      margin-top: var(--spacing-lg); /* More space above new sections */
+    }
+
+    p {
+      margin: 0 0 var(--spacing-md); /* Consistent margin below paragraphs */
+      line-height: 1;
+    }
+
+    ul {
+        margin: var(--spacing-md) 0 var(--spacing-md);
+        padding-left: 20px;
+    }
+
+    li {
+        margin-bottom: var(--spacing-xs);
+    }
+
+    /*
+     * Logo
+     */
+    .logo {
+      font-family: "SUSE Mono", monospace;
+      font-weight: 300; /* A bit heavier than 200 */
+      color: var(--accent);
+      font-size: 2.6rem; /* A touch smaller for better visual flow */
+      margin: 0;
+      margin-bottom: var(--spacing-xs); /* Tighter spacing to header sub-text */
+      letter-spacing: -1px; /* Tweak letter spacing for monospaced font */
+    }
+
+    /*
+     * Utility and Components
+     */
+    .muted {
+      color: var(--muted);
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* Header adjustments for cleaner alignment */
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: var(--spacing-lg);
+    }
+
+    /* Input and Form Elements (kept concise) */
+    input, textarea {
+      width: 100%;
+      padding: var(--spacing-sm) var(--spacing-md);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      font: inherit;
+      box-sizing: border-box; /* Crucial for width: 100% with padding */
+    }
+
+    label {
+      font-weight: 600;
+      display: block; /* Ensures label takes full width */
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .hint {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: var(--spacing-xs);
+    }
+
+    /* Footer */
+    footer {
+      margin-top: var(--spacing-lg);
+      padding-top: var(--spacing-md);
+      border-top: 1px solid var(--line); /* Use a border instead of a standalone <hr> for styling control */
+    }
+
+    footer p {
+        margin: 0; /* Remove extra margin */
+    }
+
+    /* Custom removal of the unneeded <hr> */
+    hr {
+        display: none;
+    }
+
+    /* Minor cleanup of extra tags and styles in the body content */
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=SUSE+Mono:wght@200;300&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<main>
+  <header>
+    <a href="/" style="text-decoration:none"><h1 class="logo">Eter chat</h1></a>
+    <p class="muted">Eter Chat is an AI assistant for your company. Private, secure, and trained on your documents.</p>
+  </header>
+
+  <section aria-labelledby="waitlist-title">
+    <h1 id="waitlist-title">Waitlist for December pilots</h1>
+    </section>
+
+  <section>
+    <div>
+      <p>Email the following details to get on the waitlist:</p>
+      <ul>
+        <li>Your company size. We prefer <strong>50-200</strong>.</li>
+        <li>Location. We prefer <strong>EU</strong> for now.</li>
+      </ul>
+      <p>Send your information to <a href="mailto:mattis@eter.chat">mattis@eter.chat</a>.</p>
+      </div>
+  </section>
+
+  <section aria-labelledby="pricing-title">
+    <h2 id="pricing-title">Pricing</h2>
+    <p><strong>Pilot (≤100 seats):</strong> 1500 EUR one-time setup + 1000 EUR/month</p>
+    <p class="muted">Larger orgs or self-hosting: custom pricing on request.</p>
+    </section>
+
+  <section aria-labelledby="guarantee-title">
+    <h2 id="guarantee-title">Guarantee</h2>
+    <p class="muted">30-day guarantee — if your team doesn’t use it, we refund the month. Cancel anytime.</p>
+    <p class="muted">Read more about our commitment to security and privacy <a href="https://www.eter.chat/security">here</a>.</p>
+</section>
+
+  <footer>
+    <p><a href="http://www.eter.chat"><- back to our website</a></p>
+  </footer>
+</main>
+</body>
+</html>
