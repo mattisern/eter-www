@@ -52,7 +52,7 @@
   
   h1 { 
     font-size: 1.75rem; 
-    margin-top: var(--spacing-sm); 
+    margin-top: 3rem; 
   }
   
   h2 { 
@@ -295,10 +295,6 @@ ul.tight {
 .tight {
   list-style: disc; /* Ensure a bullet is present */
   padding-left: 20px;
-}
-
-.tight li {
-  margin-bottom: var(--spacing-xs);
 }
 
 /* Also noticed this element which likely needs margin removal */
